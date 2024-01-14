@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1705257558300,
+      "tag": "0000_rainy_dark_beast",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1705257880989,
+      "tag": "0001_damp_boomer",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1705259334397,
+      "tag": "0002_volatile_gamora",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1705261508318,
+      "tag": "0003_natural_dorian_gray",
+      "breakpoints": true
+    }
+  ]
+}

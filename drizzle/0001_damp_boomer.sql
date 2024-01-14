@@ -1,0 +1,1 @@
+ALTER TABLE `songs` MODIFY COLUMN `id` int NOT NULL;
