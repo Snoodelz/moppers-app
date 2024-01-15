@@ -5,6 +5,8 @@ import { getAllSongs } from "../lib/data";
 import SongList from "@/components/songlist";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
+import SongFormModal from "@/components/songFormModal";
+import { insertSong } from "../lib/actions";
 export default async function SongsPage() {
 	const songs = await getAllSongs();
 	return (
@@ -22,11 +24,9 @@ export default async function SongsPage() {
 			<div className="min-w-0 max-w-[500px] sm:w-[500px] pt-4">
 				<SongList songs={songs} />
 			</div>
-			<Link href="/songs/add">
-				<Button color="primary" className="mt-4 mx-2">
-					Lägg till ny låt
-				</Button>
-			</Link>
+			<div className="pl-3 pt-2">
+				<SongFormModal action={insertSong} />
+			</div>
 		</div>
 	);
 }

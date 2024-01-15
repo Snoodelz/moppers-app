@@ -9,7 +9,7 @@ export default function AddSongsPage() {
 	return (
 		<div>
 			<h1 className={title()}>Lägg till låt</h1>
-			<SongForm action={insertSong} />
+			{/* <SongForm action={insertSong} /> */}
 		</div>
 	);
 }

@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "f57b0a82-4e2f-4abc-9f72-c9b0c0913b14",
+  "id": "969c8643-817a-4a4f-8ec1-e4ad7deb2dec",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "songs": {
@@ -9,13 +9,13 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "int",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": true
         },
-        "name": {
-          "name": "name",
+        "title": {
+          "name": "title",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": true,

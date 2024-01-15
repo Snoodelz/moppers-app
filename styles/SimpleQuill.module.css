@@ -1,0 +1,5 @@
+/* SimpleQuill.module.css */
+.qlContainer .qlEditor {
+  height: 300px;
+  overflow-y: auto;
+ }

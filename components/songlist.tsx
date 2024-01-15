@@ -3,9 +3,11 @@
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import type { Song } from "@/db/schema";
 import { Button } from "@nextui-org/button";
-import { deleteSong } from "@/app/lib/actions";
+import { deleteSong, updateSong } from "@/app/lib/actions";
 import Link from "next/link";
 import RemoveModal from "./removeModal";
+import SongFormModal from "./songFormModal";
+import Lyrics from "./lyrics";
 
 type SongArray = Song[];
 
@@ -24,12 +26,10 @@ export default function SongList({ songs }: { songs: SongArray }) {
 					subtitle={<i>Melodi: {song.melody}</i>}
 					title={song.title}
 				>
-					{song.lyrics}
+					<Lyrics lyrics={song.lyrics} />
 					<br />
-					<div className="float-right mb-4">
-						<Link href={`/songs/${song.id}`} className="mr-2">
-							<Button color="secondary">Redigera</Button>
-						</Link>
+					<div className="float-right my-4 gap-2 flex">
+						<SongFormModal song={song} action={updateSong.bind(null, song.id)} />
 						<RemoveModal id={song.id} title={song.title} />
 					</div>
 				</AccordionItem>

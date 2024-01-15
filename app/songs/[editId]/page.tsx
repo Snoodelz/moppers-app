@@ -14,7 +14,7 @@ async function EditPage({ params }: { params: { editId: string } }) {
 	return (
 		<div>
 			<h1 className={title()}>Redigera låt</h1>
-			<SongForm song={song} action={updateSongWithId} />
+			{/* <SongForm song={song} action={updateSongWithId} /> */}
 			{/* <form
 				action={updateSongWithId}
 				className="flex flex-col w-full flex-wrap md:flex-nowrap gap-4 pt-8"
