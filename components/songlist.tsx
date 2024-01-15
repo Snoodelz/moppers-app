@@ -28,7 +28,7 @@ export default function SongList({ songs }: { songs: SongArray }) {
 				>
 					<Lyrics lyrics={song.lyrics} />
 					<br />
-					<div className="float-right my-4 gap-2 flex">
+					<div className="float-right mb-4 gap-2 flex">
 						<SongFormModal song={song} action={updateSong.bind(null, song.id)} />
 						<RemoveModal id={song.id} title={song.title} />
 					</div>

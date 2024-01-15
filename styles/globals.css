@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ql-editor {
+  overflow-y: auto;
+  max-height: 40vh;
+ }

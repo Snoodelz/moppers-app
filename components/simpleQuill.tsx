@@ -13,13 +13,7 @@ interface SimpleQuillProps {
 const SimpleQuill = ({ value, onChange }: SimpleQuillProps) => {
 	return (
 		<div>
-			<ReactQuill
-				theme="snow"
-				value={value}
-				defaultValue={value}
-				onChange={onChange}
-				className="overflow-y-auto max-h-[300px]"
-			/>
+			<ReactQuill theme="snow" value={value} defaultValue={value} onChange={onChange} />
 		</div>
 	);
 };
