@@ -13,7 +13,6 @@ import {
 } from "@nextui-org/react";
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import SimpleQuill from "./simpleQuill";
-import Tiptap from "./TipTap";
 
 interface SongFormModalProps {
 	song?: Song | null;
