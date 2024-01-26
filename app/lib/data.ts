@@ -7,8 +7,7 @@ export async function getAllSongs() {
 	return await db.query.songs.findMany();
 }
 export async function getSong(id: number) {
-	const song = await db.select().from(songs).where(eq(songs.id, id)).limit(1);
-	return song[0];
+	return await db.query.songs.findFirst({ where: eq(songs.id, id) });
 }
 export async function searchSong(title: string) {
 	return await db
