@@ -14,7 +14,6 @@ export async function insertSong(formData: FormData, lyrics: string) {
 	await db.insert(songs).values(song);
 
 	revalidatePath("/songs");
-	redirect("/songs");
 }
 export async function deleteSong(id: number) {
 	await db.delete(songs).where(eq(songs.id, id));
@@ -29,5 +28,4 @@ export async function updateSong(id: number, formData: FormData, lyrics: string)
 	await db.update(songs).set(song).where(eq(songs.id, id));
 
 	revalidatePath("/songs");
-	redirect("/songs");
 }
