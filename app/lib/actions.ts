@@ -50,9 +50,9 @@ export async function updateSongAction(id: number, formData: FormData, lyrics: s
 
 export async function authenticateAction(formData: FormData) {
 	const password = formData.get("password") as string;
-	return signIn(password);
+	return await signIn(password);
   }
 
 export async function signOutAction() {
-	signOut();
+	await signOut();
 }

@@ -5,6 +5,7 @@ import SongList from "@/components/songlist";
 import SongFormModal from "@/components/songFormModal";
 import { insertSongAction } from "../lib/actions";
 import { isAuthenticated } from "@/auth";
+
 export default async function SongsPage() {
   const songs = await getAllSongs();
   const authenticated = await isAuthenticated();

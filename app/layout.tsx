@@ -7,7 +7,6 @@ import { Navbar } from "@/components/navbar";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import type { Viewport } from "next";
-import { isAuthenticated } from "@/auth";
 
 export const metadata: Metadata = {
   title: {
@@ -29,15 +28,14 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const authenticated = await isAuthenticated();
+export default function RootLayout({ children }: { children: any }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={clsx("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark", themes: ["light", "dark"] }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar authenticated={authenticated} />
+            <Navbar />
             <main className="container mx-auto max-w-7xl pt-2 px-4 flex-grow">{children}</main>
             <footer className="w-full flex items-center justify-center py-3"></footer>
           </div>

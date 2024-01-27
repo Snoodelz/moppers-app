@@ -21,11 +21,9 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, SearchIcon, YoutubeIcon, InstagramIcon } from "@/components/icons";
 
 import { Logo } from "@/components/icons";
-import LoginFormModal from "./loginFormModal";
-import { Button } from "@nextui-org/button";
-import { signOutAction } from "@/app/lib/actions";
+import NavBarAuthenticated from "./navbar-authenticated";
 
-export const Navbar = ({ authenticated }: { authenticated: boolean }) => {
+export const Navbar = () => {
   const searchInput = (
     <Input
       aria-label="Search"
@@ -82,15 +80,7 @@ export const Navbar = ({ authenticated }: { authenticated: boolean }) => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        {authenticated ? (
-          <form action={signOutAction}>
-            <Button variant="ghost" type="submit">
-              Logga ut
-            </Button>
-          </form>
-        ) : (
-          <LoginFormModal />
-        )}
+        <NavBarAuthenticated />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
