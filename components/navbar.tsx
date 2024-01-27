@@ -22,13 +22,10 @@ import { GithubIcon, SearchIcon, YoutubeIcon, InstagramIcon } from "@/components
 
 import { Logo } from "@/components/icons";
 import LoginFormModal from "./loginFormModal";
-import { isAuthenticated } from "@/auth";
 import { Button } from "@nextui-org/button";
 import { signOutAction } from "@/app/lib/actions";
 
-export const Navbar = async () => {
-  const authenticated = await isAuthenticated();
-  console.log(authenticated);
+export const Navbar = ({ authenticated }: { authenticated: boolean }) => {
   const searchInput = (
     <Input
       aria-label="Search"
