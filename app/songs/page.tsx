@@ -16,7 +16,7 @@ export default async function SongsPage() {
 					src="/images/moppersLogga.png"
 					alt="Ingarö Moppers Logga"
 					priority={true}
-					width={400}
+					width={251}
 					height={400}
 				/>
 			</div>
