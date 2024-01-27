@@ -1,7 +1,7 @@
 "use server";
 import { db } from "@/db";
 import { eq, like } from "drizzle-orm";
-import { NewSong, songs } from "@/db/schema";
+import { songs } from "@/db/schema";
 
 export async function getAllSongs() {
 	return await db.query.songs.findMany();
