@@ -6,3 +6,13 @@
   overflow-y: auto;
   max-height: 40vh;
  }
+
+
+
+ .dark .ql-picker-label {
+  color: hsl(var(--nextui-foreground)) !important;
+}
+
+.dark .ql-stroke {
+  stroke: hsl(var(--nextui-foreground)) !important;
+}

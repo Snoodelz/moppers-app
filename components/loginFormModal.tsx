@@ -21,7 +21,6 @@ export default function LoginFormModal() {
     });
   };
 
-  //reset error message on open
   const handleOpen = () => {
     setErrorMessage("");
     onOpen();
@@ -40,10 +39,17 @@ export default function LoginFormModal() {
               <ModalHeader>Login</ModalHeader>
               <ModalBody>
                 <form ref={formRef} onSubmit={handleSubmit}>
-                  <Input type="password" name="password" label="Lösenord" required autoFocus />
-                  <p className="text-danger-500 pt-2" color="primary">
-                    {errorMessage}
-                  </p>
+                  <Input
+                    type="password"
+                    name="password"
+                    label="Lösenord"
+                    required
+                    autoFocus
+                    isInvalid={errorMessage.length > 0}
+                    errorMessage={errorMessage}
+                    variant="bordered"
+                    onValueChange={() => setErrorMessage("")}
+                  />
                 </form>
               </ModalBody>
               <ModalFooter>

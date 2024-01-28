@@ -1,16 +1,6 @@
 "use client";
 import type { Song } from "@/db/schema";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-  Input,
-  Textarea,
-} from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Input, Textarea } from "@nextui-org/react";
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import SimpleQuill from "./simpleQuill";
 
@@ -35,11 +25,11 @@ export function SongFormModal({ song, action }: SongFormModalProps) {
     const formData = new FormData(event.currentTarget);
     action(formData, lyrics);
     onClose();
+    setLyrics("");
   };
 
   const handleChange = (content: string) => {
     setLyrics(content);
-    console.log("Content changed:", content);
   };
   const buttonText: string = song ? "Redigera" : "Lägg till låt";
   const buttonSubmitText: string = song ? "Ändra" : "Lägg till";
@@ -49,12 +39,7 @@ export function SongFormModal({ song, action }: SongFormModalProps) {
       <Button onPress={onOpen} color="primary">
         {buttonText}
       </Button>
-      <Modal
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        placement="top-center"
-        size="xl"
-      >
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center" size="xl">
         <ModalContent>
           {(onClose) => (
             <>
@@ -66,30 +51,13 @@ export function SongFormModal({ song, action }: SongFormModalProps) {
                   //action={action}
                   className="flex flex-col w-full flex-wrap md:flex-nowrap gap-4 pt-8"
                 >
-                  <Input
-                    variant="bordered"
-                    isRequired
-                    type="text"
-                    label="Titel"
-                    name="title"
-                    autoFocus
-                    defaultValue={song?.title ?? ""}
-                  />
-                  <Input
-                    variant="bordered"
-                    type="text"
-                    label="Melodi"
-                    name="melody"
-                    defaultValue={song?.melody ?? ""}
-                  />
+                  <Input variant="bordered" isRequired type="text" label="Titel" name="title" autoFocus defaultValue={song?.title ?? ""} />
+                  <Input variant="bordered" type="text" label="Melodi" name="melody" defaultValue={song?.melody ?? ""} />
                   <SimpleQuill value={lyrics} onChange={handleChange} />
                 </form>
               </ModalBody>
               <ModalFooter>
-                <Button
-                  color="primary"
-                  onPress={() => formRef.current?.requestSubmit()}
-                >
+                <Button color="primary" onPress={() => formRef.current?.requestSubmit()}>
                   {buttonSubmitText}
                 </Button>
               </ModalFooter>

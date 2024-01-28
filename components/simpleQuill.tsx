@@ -6,16 +6,16 @@ import "@/styles/quill.css";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 interface SimpleQuillProps {
-	value: string;
-	onChange: (content: string) => void;
+  value: string;
+  onChange: (content: string) => void;
 }
 
 const SimpleQuill = ({ value, onChange }: SimpleQuillProps) => {
-	return (
-		<div>
-			<ReactQuill theme="snow" value={value} defaultValue={value} onChange={onChange} />
-		</div>
-	);
+  return (
+    <div>
+      <ReactQuill theme="snow" value={value} onChange={onChange} />
+    </div>
+  );
 };
 
 export default SimpleQuill;
