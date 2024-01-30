@@ -16,3 +16,11 @@
 .dark .ql-stroke {
   stroke: hsl(var(--nextui-foreground)) !important;
 }
+
+.ql-toolbar {
+  border-radius: var(--nextui-radius-small) var(--nextui-radius-small) 0px 0px;
+}
+
+.ql-container {
+  border-radius: 0px 0px var(--nextui-radius-small) var(--nextui-radius-small);
+}

@@ -1,6 +1,6 @@
-import React from "react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import { deleteSongAction } from "@/app/lib/actions";
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+import { DeleteIcon } from "./icons";
 
 export default function RemoveModal({ id, title }: { id: number; title: string }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -8,6 +8,7 @@ export default function RemoveModal({ id, title }: { id: number; title: string }
   return (
     <>
       <Button color="danger" onPress={onOpen}>
+        <DeleteIcon />
         Ta bort
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>

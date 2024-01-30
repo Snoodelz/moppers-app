@@ -1,8 +1,7 @@
 "use client";
-import "react-quill/dist/quill.snow.css";
+import "@/styles/quill.css";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
-import "@/styles/quill.css";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 interface SimpleQuillProps {
@@ -12,7 +11,7 @@ interface SimpleQuillProps {
 
 const SimpleQuill = ({ value, onChange }: SimpleQuillProps) => {
   return (
-    <div>
+    <div className="w-full">
       <ReactQuill theme="snow" value={value} onChange={onChange} />
     </div>
   );
