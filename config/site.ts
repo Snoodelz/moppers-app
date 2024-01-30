@@ -2,15 +2,11 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
 	name: "Ingarö Moppers",
-	description: "Idk",
+	description: "Moppers sånger och äventyr",
 	navItems: [
 		{
-			label: "Hem",
-			href: "/",
-		},
-		{
 			label: "Sånger",
-			href: "/songs",
+			href: "/",
 		},
 		{
 			label: "Äventyr",
