@@ -19,10 +19,16 @@ export default function SongList({ songs, authenticated }: { songs: SongArray; a
   return (
     <Accordion variant="splitted">
       {songs.map((song) => (
-        <AccordionItem className="" key={song.id} aria-label="Accordion 1" subtitle={<i>Melodi: {song.melody}</i>} title={song.title}>
+        <AccordionItem
+          className=""
+          key={song.id}
+          aria-label="Accordion 1"
+          subtitle={<i>Melodi: {song.melody}</i>}
+          title={song.title}
+        >
           <Lyrics lyrics={song.lyrics} />
           <br />
-          <div className="float-right mb-4 gap-2 flex">
+          <div className="float-right mb-4 flex gap-2">
             {authenticated && (
               <>
                 <SongFormModal song={song} action={updateSongAction.bind(null, song.id)} />
